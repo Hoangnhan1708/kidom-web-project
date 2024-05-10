@@ -7,6 +7,8 @@ import Login from '~/pages/Login';
 import Product from '~/pages/Product';
 import AboutUs from '~/pages/AboutUs';
 import Blog from '~/pages/Blog';
+import Faq from '~/pages/Faq';
+import Policy from '~/pages/Policy';
 import Search from '~/pages/Search';
 
 import DesignByYou from '~/pages/DesignByYou';
@@ -19,6 +21,8 @@ const publicRoutes = [
     { path: config.routes.aboutus, component: AboutUs },
     { path: config.routes.blog, component: Blog },
     { path: config.routes.search, component: Search },
+    { path: config.routes.faq, component: Faq },
+    { path: config.routes.policy, component: Policy },
     { path: config.routes.designByYou, component: DesignByYou, layout: FooterOnly },
 ];
 

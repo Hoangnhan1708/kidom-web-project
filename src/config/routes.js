@@ -6,6 +6,8 @@ const routes = {
     blog: '/blog',
     aboutus: '/aboutus',
     search: '/search',
+    faq: '/faq',
+    policy: '/policy',
     designByYou: '/design-by-you',
 };
 
