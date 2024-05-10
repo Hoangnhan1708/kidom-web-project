@@ -1,0 +1,19 @@
+.category-col {
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        transform: scale(1.05);
+        color: red;
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+.category-img {
+    width: 170px;
+}
