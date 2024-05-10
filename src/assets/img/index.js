@@ -4,6 +4,8 @@ const images = {
     facebookLogo: require('~/assets/img/footer/Facebook-Logo.png'),
     instagramLogo: require('~/assets/img/footer/Instagram-Logo.png'),
     tiktokLogo: require('~/assets/img/footer/TIKTOK-social-1-.png'),
+    banner1: require('~/assets/img/banner/Bannerhome.png'),
+    banner2: require('~/assets/img/banner/Bannerhome2.jpg'),
 };
 
 export default images;
