@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-item {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff;
+    height: 100%;
+    padding: 13px;
+    padding-left: 16px;
+
+    &:hover {
+        background-color: #fff;
+        color: #407ec9;
+    }
+}
+
+.link-item:first-child {
+    padding: 0;
+}
+
+.link-img {
+    width: 91px;
+    height: 50px;
+    transform: translateY(5%);
+}

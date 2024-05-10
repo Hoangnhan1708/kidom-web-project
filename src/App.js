@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes/routes';
