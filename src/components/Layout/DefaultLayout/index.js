@@ -1,5 +1,5 @@
 import Header from './Header';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 function DefaultLayout({ children }) {
     return (
