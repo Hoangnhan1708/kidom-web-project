@@ -12,21 +12,33 @@ const cx = classNames.bind(styles);
 
 
 function Home() {
-    const [backendData,setBackendData] = useState([{}]);
+    const [newProducts,setNewProducts] = useState([{}]);
+    const [saleProducts,setSaleProducts] = useState([{}]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchNewProducts = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/");
+                const response = await axios.get("http://localhost:5000/home/new-products");
                 console.log(response);
                 
-                setBackendData(response.data)
+                setNewProducts(response.data)
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
-    
-        fetchData();
+
+        const fetchSaleProducts = async () => {
+            try {
+                const response = await axios.get("http://localhost:5000/home/sale-products");
+                console.log(response);
+                
+                setSaleProducts(response.data)
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchSaleProducts();
+        fetchNewProducts();
     }, []);
 
         
@@ -38,9 +50,9 @@ function Home() {
 
             <div className={cx('container')}>
                 <Banner className={cx('banner')} title="Sản phẩm mới" />
-                <ProductContainer data={backendData} />
+                <ProductContainer data={newProducts} />
                 <Banner className={cx('banner')} title="Khuyến mãi" />
-                <ProductContainer title="Khuyến mãi" data={backendData} />
+                <ProductContainer title="Khuyến mãi" data={saleProducts} />
             </div>
         </div>
     );

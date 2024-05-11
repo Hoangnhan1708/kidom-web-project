@@ -5,7 +5,7 @@ const homeRouter = require('./home.js');
 function route(app){
     app.use('/product', productRouter);
 
-    app.use('/', homeRouter);
+    app.use('/home', homeRouter);
 
 }
 
