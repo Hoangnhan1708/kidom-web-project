@@ -17,7 +17,7 @@ function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api");
+                const response = await axios.get("http://localhost:5000/");
                 console.log(response);
                 
                 setBackendData(response.data)
