@@ -12,6 +12,15 @@ const images = {
     thethao: require('~/assets/img/catagory/thethao.png'),
     thucongmythuat: require('~/assets/img/catagory/thucongmythuat.png'),
     trochoitritue: require('~/assets/img/catagory/trochoitritue.png'),
+    banner: require('~/assets/img/logo/tieude.png'),
+    product1_thumb: require('~/assets/img/product/1_thumb.png'),
+    product2_thumb: require('~/assets/img/product/2_thumb.png'),
+    product3_thumb: require('~/assets/img/product/3_thumb.jpg'),
+    product4_thumb: require('~/assets/img/product/4_thumb.jpg'),
+    product5_thumb: require('~/assets/img/product/5_thumb.png'),
+    product6_thumb: require('~/assets/img/product/6_thumb.png'),
+    product7_thumb: require('~/assets/img/product/7_thumb.png'),
+    product8_thumb: require('~/assets/img/product/8_thumb.jpg'),
 };
 
 export default images;

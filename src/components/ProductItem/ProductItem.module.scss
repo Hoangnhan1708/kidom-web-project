@@ -1,0 +1,31 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    border-radius: 16px;
+    height: 500px;
+    position: relative;
+}
+
+.item-img {
+    width: 80%;
+    border-radius: 16px;
+}
+.item-heading {
+    margin-top: 10px;
+    max-width: 150px;
+    color: rgb(17, 84, 84);
+    text-align: center;
+}
+.item-price {
+    color: red;
+}
+.item-add2cart-btn {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    position: absolute;
+    bottom: 3%;
+    left: auto;
+}
