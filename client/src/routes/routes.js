@@ -10,6 +10,7 @@ import Blog from '~/pages/Blog';
 import Faq from '~/pages/Faq';
 import Policy from '~/pages/Policy';
 import Search from '~/pages/Search';
+import ProductDetail from '~/pages/ProductDetail';
 
 import DesignByYou from '~/pages/DesignByYou';
 
@@ -18,6 +19,7 @@ const publicRoutes = [
     { path: config.routes.login, component: Login },
     { path: config.routes.cart, component: Cart },
     { path: config.routes.product, component: Product },
+    { path: config.routes.productDetail, component: ProductDetail },
     { path: config.routes.aboutus, component: AboutUs },
     { path: config.routes.blog, component: Blog },
     { path: config.routes.search, component: Search },

@@ -30,6 +30,17 @@ class ProductController{
             console.log("bug");
         }
     }
+
+    // GET  /:id
+    async showDetail(req,res,next){
+        try{
+            
+            const product = await Product.findOne({id:req.params.id}).limit(16);
+            res.json(product);
+        }catch{
+            console.log("bug");
+        }
+    }
 }
 
 module.exports = new ProductController;

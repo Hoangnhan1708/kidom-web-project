@@ -8,9 +8,10 @@ import ProductContainer from '~/components/ProductContainer';
 import { useState,useEffect } from 'react';
 
 import { fetchData } from '~/utils';
-
+import images from '~/assets/img';
 const cx = classNames.bind(styles);
 
+const slideImages = ["Bannerhome.png","Bannerhome2.jpg"];
 
 function Home() {
     const [newProducts,setNewProducts] = useState([{}]);
@@ -45,7 +46,7 @@ function Home() {
 
     return (
         <div className={cx('wrapper')}>
-            <Slider />
+            <Slider className={cx('slideshow')} type="banner" imgs ={slideImages}/>
             <Category />
 
             <div className={cx('container')}>

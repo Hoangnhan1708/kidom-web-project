@@ -33,3 +33,10 @@
     bottom: 3%;
     left: auto;
 }
+
+.item-link-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

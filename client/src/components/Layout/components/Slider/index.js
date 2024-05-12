@@ -2,29 +2,21 @@ import classNames from 'classnames/bind';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import styles from './Slider.module.scss';
-import images from '~/assets/img';
-
+import { ENV } from '~/env';
 const cx = classNames.bind(styles);
 
-const slideImages = [
-    {
-        url: images.banner1,
-        caption: 'Slide 1',
-    },
-    {
-        url: images.banner2,
-        caption: 'Slide 2',
-    },
-];
-function Slider() {
+
+function Slider({type,imgs}) {
     return (
         <div className={cx('wrapper')}>
             <Slide>
-                {slideImages.map((slideImage, index) => (
-                    <div key={index}>
-                        <img className={cx('slide-img')} src={slideImage.url} alt="slide" />
-                    </div>
-                ))}
+                
+                {imgs.map((img, index) => {
+                    console.log(`${ENV.BASE_URL}/img/${type}/${img}`);
+                    return (<div key={index}>
+                        <img className={cx('slide-img')} src={`${ENV.BASE_URL}/img/${type}/${img}`} alt="slide" />
+                    </div>)
+                })}
             </Slide>
         </div>
     );
