@@ -6,7 +6,8 @@ import Category from '~/components/Layout/components/Category';
 import Banner from '~/components/Layout/components/Banner';
 import ProductContainer from '~/components/ProductContainer';
 import { useState,useEffect } from 'react';
-import axios from 'axios';
+
+import { fetchData } from '~/utils';
 
 const cx = classNames.bind(styles);
 
@@ -15,28 +16,29 @@ function Home() {
     const [newProducts,setNewProducts] = useState([{}]);
     const [saleProducts,setSaleProducts] = useState([{}]);
 
+    // Fetch to get new products
     useEffect(() => {
-        const fetchNewProducts = async () => {
+        (async () => {
             try {
-                const response = await axios.get("http://localhost:5000/home/new-products");
-                
-                setNewProducts(response.data)
+                const url = 'http://localhost:5000/home/new-products'; // Thay đổi URL thành URL thực tế bạn muốn gọi
+                const products = await fetchData(url);
+                setNewProducts(products);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-        };
+        })();
 
-        const fetchSaleProducts = async () => {
+        // Fetch to get sale products
+        (async () => {
             try {
-                const response = await axios.get("http://localhost:5000/home/sale-products");
-                
-                setSaleProducts(response.data)
+                const url = 'http://localhost:5000/home/sale-products'; // Thay đổi URL thành URL thực tế bạn muốn gọi
+                const products = await fetchData(url);
+                setSaleProducts(products);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-        };
-        fetchSaleProducts();
-        fetchNewProducts();
+        })();
+        
     }, []);
 
         

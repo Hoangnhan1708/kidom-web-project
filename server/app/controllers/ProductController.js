@@ -9,7 +9,26 @@ class ProductController{
         }catch{
             console.log("bug");
         }
-        
+    }
+
+    // GET  /show-category
+    async showCategory(req,res,next){
+        try{
+            const categories = await Product.distinct("category");
+            res.json(categories);
+        }catch{
+            console.log("bug");
+        }
+    }
+
+    // GET  /show-brand
+    async showBrand(req,res,next){
+        try{
+            const brands = await Product.distinct("brand");
+            res.json(brands);
+        }catch{
+            console.log("bug");
+        }
     }
 }
 
