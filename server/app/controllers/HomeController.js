@@ -4,7 +4,7 @@ class HomeController{
     // GET  /new-products
     async newProducts(req,res,next){
         try{
-            const products = await Product.find({}).limit(4);
+            const products = await Product.find().sort({ time: -1 }).limit(4);
             res.json(products);
         }catch{
             console.log("bug");
@@ -14,7 +14,7 @@ class HomeController{
     // GET  /sale-products
     async saleProducts(req,res,next){
         try{
-            const products = await Product.find({}).limit(3);
+            const products = await Product.find().sort({ price: 1 }).limit(4);
             res.json(products);
         }catch{
             console.log("bug");

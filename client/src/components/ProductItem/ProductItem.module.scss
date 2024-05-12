@@ -18,6 +18,10 @@
     max-width: 150px;
     color: rgb(17, 84, 84);
     text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .item-price {
     color: red;

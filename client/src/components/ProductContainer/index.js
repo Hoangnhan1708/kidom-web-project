@@ -2,8 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './ProductContainer.module.scss';
 
 import ProductItem from '../ProductItem';
-import images from '~/assets/img';
-// import images from '~/assets/img';
+
 const cx = classNames.bind(styles);
 function ProductContainer({ title, data }) {
     return (
@@ -11,8 +10,6 @@ function ProductContainer({ title, data }) {
             <div className={`row ${cx('list-item')}`}>
                 {data.map((item, index) => {
                     const imgs = item.imageUrl;
-                    
-                    {/* const [firstImg, ...other] =  imgs; */}
                     return (
                         <ProductItem
                             key={index}

@@ -4,9 +4,8 @@ class ProductController{
     // GET  /
     async index(req,res,next){
         try{
-            const products = await Product.find({});
+            const products = await Product.find({}).limit(16);
             res.json(products);
-            console.log(products.length);
         }catch{
             console.log("bug");
         }
