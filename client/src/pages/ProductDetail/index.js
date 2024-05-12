@@ -57,8 +57,8 @@ function ProductDetail() {
                 <div className={`col-6 ${cx('infor')}`}>
                     <h1>{productData.name}</h1>
                 </div>
-                <ProductContainer data={otherProductData} />
             </div>
+            <ProductContainer data={otherProductData} />
         </div>
     );
 }
