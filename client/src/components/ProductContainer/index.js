@@ -10,11 +10,14 @@ function ProductContainer({ title, data }) {
         <div className={cx('wrapper')}>
             <div className={`row ${cx('list-item')}`}>
                 {data.map((item, index) => {
+                    const imgs = item.imageUrl;
+                    
+                    {/* const [firstImg, ...other] =  imgs; */}
                     return (
                         <ProductItem
                             key={index}
                             className="col-3"
-                            imgSrc={images.product1_thumb}
+                            imgSrc={imgs !== undefined ? imgs[0] : ""}
                             title={item.name}
                             price={item.price}
                         />

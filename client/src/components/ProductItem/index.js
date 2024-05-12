@@ -5,7 +5,7 @@ const cx = classNames.bind(styles);
 function ProductItem({ imgSrc, title, price }) {
     return (
         <div className={`col-3 ${cx('wrapper')}`}>
-            <img className={cx('item-img')} src={imgSrc} alt={title} />
+            <img className={cx('item-img')} src={`./img/product/${imgSrc}`} alt={title} />
 
             <h3 className={cx('item-heading')}>{title}</h3>
             <label className={cx('item-price')}>{price} VNĐ</label>

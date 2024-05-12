@@ -19,7 +19,6 @@ function Home() {
         const fetchNewProducts = async () => {
             try {
                 const response = await axios.get("http://localhost:5000/home/new-products");
-                console.log(response);
                 
                 setNewProducts(response.data)
             } catch (error) {
@@ -30,7 +29,6 @@ function Home() {
         const fetchSaleProducts = async () => {
             try {
                 const response = await axios.get("http://localhost:5000/home/sale-products");
-                console.log(response);
                 
                 setSaleProducts(response.data)
             } catch (error) {

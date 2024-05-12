@@ -6,7 +6,6 @@ class HomeController{
         try{
             const products = await Product.find({}).limit(4);
             res.json(products);
-            console.log(products.length);
         }catch{
             console.log("bug");
         }
@@ -17,7 +16,6 @@ class HomeController{
         try{
             const products = await Product.find({}).limit(3);
             res.json(products);
-            console.log(products.length);
         }catch{
             console.log("bug");
         }
