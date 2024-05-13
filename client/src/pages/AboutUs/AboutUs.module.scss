@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 1320px;
+}
+
+.heading {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #0d5d9c;
+    text-transform: uppercase;
+}
+
+.content {
+    width: 100%;
+}
+
+.img-container {
+}
+
+.img {
+    object-fit: contain;
+}
+
+.paragraph-container {
+}
+
+.paragraph {
+    color: #0d5d9c;
+    font-weight: 500;
+}
+
+.img-shop {
+    object-fit: contain;
+    width: 100%;
+    border-radius: 16px;
+}

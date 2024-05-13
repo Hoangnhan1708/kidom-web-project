@@ -8,7 +8,6 @@ import ProductContainer from '~/components/ProductContainer';
 import { useState, useEffect } from 'react';
 
 import { fetchData } from '~/utils';
-import images from '~/assets/img';
 const cx = classNames.bind(styles);
 
 const slideImages = ['Bannerhome.png', 'Bannerhome2.jpg'];
