@@ -1,0 +1,33 @@
+.wrapper {
+    height: 32px;
+    display: flex;
+}
+.change-btn {
+    width: 60px;
+
+    background-color: #fff;
+    font-size: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+        border-radius: 16px 0 0 16px;
+    }
+    &:last-child {
+        border-radius: 0 16px 16px 0;
+    }
+}
+
+.input {
+    text-align: center;
+    width: 63%;
+    font-size: 2rem;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

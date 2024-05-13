@@ -5,17 +5,17 @@ import styles from './Slider.module.scss';
 import { ENV } from '~/env';
 const cx = classNames.bind(styles);
 
-
-function Slider({type,imgs}) {
+function Slider({ type, imgs }) {
     return (
         <div className={cx('wrapper')}>
             <Slide>
-                
+                {console.log(imgs)}
                 {imgs.map((img, index) => {
-                    console.log(`${ENV.BASE_URL}/img/${type}/${img}`);
-                    return (<div key={index}>
-                        <img className={cx('slide-img')} src={`${ENV.BASE_URL}/img/${type}/${img}`} alt="slide" />
-                    </div>)
+                    return (
+                        <div key={index}>
+                            <img className={cx('slide-img')} src={`${ENV.BASE_URL}/img/${type}/${img}`} alt="slide" />
+                        </div>
+                    );
                 })}
             </Slide>
         </div>

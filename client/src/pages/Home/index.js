@@ -5,17 +5,17 @@ import Slider from '~/components/Layout/components/Slider';
 import Category from '~/components/Layout/components/Category';
 import Banner from '~/components/Layout/components/Banner';
 import ProductContainer from '~/components/ProductContainer';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { fetchData } from '~/utils';
 import images from '~/assets/img';
 const cx = classNames.bind(styles);
 
-const slideImages = ["Bannerhome.png","Bannerhome2.jpg"];
+const slideImages = ['Bannerhome.png', 'Bannerhome2.jpg'];
 
 function Home() {
-    const [newProducts,setNewProducts] = useState([{}]);
-    const [saleProducts,setSaleProducts] = useState([{}]);
+    const [newProducts, setNewProducts] = useState([{}]);
+    const [saleProducts, setSaleProducts] = useState([{}]);
 
     // Fetch to get new products
     useEffect(() => {
@@ -39,20 +39,17 @@ function Home() {
                 console.error('Error fetching data:', error);
             }
         })();
-        
     }, []);
-
-        
 
     return (
         <div className={cx('wrapper')}>
-            <Slider className={cx('slideshow')} type="banner" imgs ={slideImages}/>
+            <Slider className={cx('slideshow')} type="banner" imgs={slideImages} />
             <Category />
 
             <div className={cx('container')}>
-                <Banner className={cx('banner')} title="Sản phẩm mới" />
+                <Banner title="Sản phẩm mới" />
                 <ProductContainer data={newProducts} />
-                <Banner className={cx('banner')} title="Khuyến mãi" />
+                <Banner title="Khuyến mãi" />
                 <ProductContainer title="Khuyến mãi" data={saleProducts} />
             </div>
         </div>
