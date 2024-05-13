@@ -9,6 +9,8 @@ import { ENV } from '~/env';
 import InputQuantity from '~/components/Layout/components/InputQuantity';
 import AddToCartButton from '~/components/Layout/components/AddToCartButton';
 import Banner from '~/components/Layout/components/Banner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
@@ -79,6 +81,31 @@ function ProductDetail() {
                     <AddToCartButton />
                 </div>
             </div>
+            <div className={`row ${cx('detail-info')}`}>
+                <div className={cx('detail')}>
+                    <h2 className={cx('detail-heading')}>Chi tiết sản phẩm</h2>
+                    <div className={cx('detail-row')}>
+                        <label className={cx('detail-label')}>Tên sản phẩm: </label>
+                        {'   ' + productData.name}
+                    </div>
+                    <div className={cx('detail-row')}>
+                        <label className={cx('detail-label')}>Giá sản phẩm: </label>
+                        {'   ' + productData.price}
+                    </div>
+                    <div className={cx('detail-row')}>
+                        <label className={cx('detail-label')}>Thương hiệu sản phẩm: </label>
+                        {'   ' + productData.brand}
+                    </div>
+                    <div className={cx('detail-row')}>
+                        <label className={cx('detail-label')}>Đánh giá: </label>
+                        {'   ' + productData.star} <FontAwesomeIcon className={cx('detail-icon')} icon={faStar} />
+                    </div>
+                    <br />
+                    <h2 className={cx('detail-heading')}>Mô tả sản phẩm</h2>
+                    <p className={cx('detail-description')}>{productData.description}</p>
+                </div>
+            </div>
+
             <Banner title="Các sản phẩm khác" />
             <ProductContainer data={otherProductData} />
         </div>
