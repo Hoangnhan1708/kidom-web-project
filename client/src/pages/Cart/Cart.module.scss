@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 1320px;
+}
+
+.heading {
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.header {
+}
+
+.checkbox {
+    transform: translateX(18px);
+    width: 18px;
+    height: 18px;
+}
+
+.box {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 16px;
+}

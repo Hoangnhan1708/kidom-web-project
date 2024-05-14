@@ -1,12 +1,10 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 
 import styles from './InputQuantity.module.scss';
 
 const cx = classNames.bind(styles);
 
-function InputQuantity() {
-    const [quantity, setQuantity] = useState(1);
+function InputQuantity({ quantity, setQuantity }) {
     return (
         <div className={cx('wrapper')}>
             <button
