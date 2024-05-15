@@ -1,4 +1,5 @@
 export const ENV = {
-    BASE_URL : "http://localhost:3000/",
-    PORT: 3000
+    SERVER_URL: 'http://localhost:5000',
+    BASE_URL: 'http://localhost:3000/',
+    PORT: 3000,
 };
