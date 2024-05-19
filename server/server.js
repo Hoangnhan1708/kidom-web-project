@@ -1,9 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const app = express();
+app.use(cookieParser());
 const port = 5000;
-app.use(cors());
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+        credentials: true,
+    }),
+);
 // Sử dụng body-parser để xử lý dữ liệu URL-encoded
 app.use(bodyParser.urlencoded({ extended: true }));
 

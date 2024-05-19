@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
+
 import styles from './Header.module.scss';
 import Nav from '../Nav';
 import config from '~/config';
@@ -9,13 +10,7 @@ import images from '~/assets/img';
 import Search from '../Search';
 const cx = classNames.bind(styles);
 
-// Get the offset position of the navbar
-
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-
-
-function Header() {
+function Header({ user, logout }) {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('wrapper-header')}>
@@ -31,10 +26,22 @@ function Header() {
                             <FontAwesomeIcon className={cx('cart-img')} icon={faCartShopping} />
                             <span>Giỏ hàng</span>
                         </Link>
-                        <Link to={config.routes.login} className={cx('login-link')}>
-                            <FontAwesomeIcon className={cx('login-img')} icon={faCircleUser} />
-                            <span>Đăng nhập/Đăng ký</span>
-                        </Link>
+                        {!!user ? (
+                            <div className={cx('auth-container')}>
+                                <Link to={config.routes.profile} className={cx('profile-link')}>
+                                    <img className={cx('avatar-img')} alt="avatar" src={user.avatarUrl} />
+                                    <span className={cx('profile-name')}>{user.username}</span>
+                                </Link>
+                                <button onClick={logout} className={cx('logout-btn')}>
+                                    Đăng xuất
+                                </button>
+                            </div>
+                        ) : (
+                            <Link to={config.routes.login} className={cx('login-link')}>
+                                <FontAwesomeIcon className={cx('login-img')} icon={faCircleUser} />
+                                <span>Đăng nhập/Đăng ký</span>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>

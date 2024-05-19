@@ -59,6 +59,9 @@
 
 .cart-link {
     margin-right: 30px;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .login-link {
@@ -68,4 +71,44 @@
 .cart-img,
 .login-img {
     margin-right: 10px;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-link {
+    display: flex;
+    font-size: 1.6rem;
+    color: #fff;
+    align-items: center;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.auth-container {
+    display: flex;
+}
+
+.logout-btn {
+    cursor: pointer;
+    color: #fff;
+    background-color: transparent;
+    margin-left: 10px;
+    &:hover {
+        opacity: 0.8;
+    }
 }

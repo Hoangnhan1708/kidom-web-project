@@ -30,36 +30,35 @@ function Search() {
         setShowResult(false);
     };
     return (
-        <Tippy
-            visible={showResult && searchResult.length > 0}
-            interactive={true}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        {searchResult.map((result) => {
-                            return <SearchItem data={result}></SearchItem>;
-                        })}
-
-                        <SearchItem></SearchItem>
-                        <SearchItem></SearchItem>
-                    </PopperWrapper>
+        <div>
+            <Tippy
+                visible={showResult && searchResult.length > 0}
+                interactive={true}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            {searchResult.map((result, index) => {
+                                return <SearchItem key={index} data={result}></SearchItem>;
+                            })}
+                        </PopperWrapper>
+                    </div>
+                )}
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('search')}>
+                    <input
+                        onChange={handleChange}
+                        className={cx('search-input')}
+                        type="text"
+                        placeholder="Tìm kiếm sản phẩm"
+                        onFocus={() => setShowResult(true)}
+                    ></input>
+                    <button className={cx('search-btn')}>
+                        <FontAwesomeIcon className={cx('search-icon')} icon={faSearch} />
+                    </button>
                 </div>
-            )}
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('search')}>
-                <input
-                    onChange={handleChange}
-                    className={cx('search-input')}
-                    type="text"
-                    placeholder="Tìm kiếm sản phẩm"
-                    onFocus={() => setShowResult(true)}
-                ></input>
-                <button className={cx('search-btn')}>
-                    <FontAwesomeIcon className={cx('search-icon')} icon={faSearch} />
-                </button>
-            </div>
-        </Tippy>
+            </Tippy>
+        </div>
     );
 }
 

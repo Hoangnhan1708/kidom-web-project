@@ -9,7 +9,6 @@ function Slider({ type, imgs }) {
     return (
         <div className={cx('wrapper')}>
             <Slide>
-                {console.log(imgs)}
                 {imgs.map((img, index) => {
                     return (
                         <div key={index}>

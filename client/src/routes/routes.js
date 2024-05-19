@@ -11,12 +11,14 @@ import Blog from '~/pages/Blog';
 import Faq from '~/pages/Faq';
 import Policy from '~/pages/Policy';
 import Search from '~/pages/Search';
+import Profile from '~/pages/Profile';
 import ProductDetail from '~/pages/ProductDetail';
 
 import DesignByYou from '~/pages/DesignByYou';
 
 const publicRoutes = [
     { path: config.routes.home, component: Home },
+    { path: config.routes.profile, component: Profile },
     { path: config.routes.login, component: Login, layout: null },
     { path: config.routes.signup, component: SignUp, layout: null },
     { path: config.routes.cart, component: Cart },
