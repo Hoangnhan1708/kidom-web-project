@@ -5,7 +5,7 @@ import { ENV } from '~/env';
 // import { useState } from 'react';
 const cx = classNames.bind(styles);
 
-function AddToCartButton({ quantity = 1, productId }) {
+function AddToCartButton({ quantity = 1, productId, name, price, imageUrl }) {
     // const [userId, setUserId] = useState('');
     const handleAddToCart = () => {
         fetch(`http://localhost:5000/login/auth/me`, { credentials: 'include' })
@@ -18,7 +18,7 @@ function AddToCartButton({ quantity = 1, productId }) {
                         'Content-Type': 'application/json',
                     },
                     credentials: 'include',
-                    body: JSON.stringify({ userId, productId, quantity }),
+                    body: JSON.stringify({ userId, productId, quantity, name, price, imageUrl }),
                 })
                     .then((res) => res.json())
                     .then((message) => alert(message.message));

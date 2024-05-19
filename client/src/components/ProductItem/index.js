@@ -14,7 +14,13 @@ function ProductItem({ imgSrc, title, price, id }) {
                 <h3 className={cx('item-heading')}>{title}</h3>
             </Link>
             <label className={cx('item-price')}>{price} VNĐ</label>
-            <AddToCartButton quantity={1} productId={id} />
+            <AddToCartButton
+                imageUrl={`${ENV.BASE_URL}/img/product/${imgSrc}`}
+                price={price}
+                name={title}
+                quantity={1}
+                productId={id}
+            />
         </div>
     );
 }

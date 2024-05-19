@@ -80,7 +80,13 @@ function ProductDetail({ user }) {
                     <h1 className={cx('title')}>{productData.name}</h1>
                     <h2 className={cx('price')}>{productData.price} VNĐ</h2>
                     <InputQuantity quantity={quantity} setQuantity={setQuantity} />
-                    <AddToCartButton quantity={quantity} productId={productData.id} />
+                    <AddToCartButton
+                        imageUrl={`${ENV.BASE_URL}/img/product/${productData.imageUrl}`}
+                        price={productData.price}
+                        name={productData.name}
+                        quantity={quantity}
+                        productId={productData.id}
+                    />
                 </div>
             </div>
             <div className={` ${cx('detail-info')}`}>
