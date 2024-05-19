@@ -13,6 +13,7 @@ function App() {
         fetch(`http://localhost:5000/login/auth/me`, { credentials: 'include' })
             .then((res) => res.json())
             .then((me) => {
+                // console.log(me);
                 setUser(me);
             });
     }, []);

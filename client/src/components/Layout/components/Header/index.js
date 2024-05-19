@@ -8,6 +8,7 @@ import Nav from '../Nav';
 import config from '~/config';
 import images from '~/assets/img';
 import Search from '../Search';
+import { ENV } from '~/env';
 const cx = classNames.bind(styles);
 
 function Header({ user, logout }) {
@@ -28,7 +29,7 @@ function Header({ user, logout }) {
                         </Link>
                         {!!user ? (
                             <div className={cx('auth-container')}>
-                                <Link to={config.routes.profile} className={cx('profile-link')}>
+                                <Link to={`${ENV.BASE_URL}profile/${user.id}`} className={cx('profile-link')}>
                                     <img className={cx('avatar-img')} alt="avatar" src={user.avatarUrl} />
                                     <span className={cx('profile-name')}>{user.username}</span>
                                 </Link>

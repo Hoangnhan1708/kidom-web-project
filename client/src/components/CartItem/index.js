@@ -5,7 +5,7 @@ import styles from './CartItem.module.scss';
 import InputQuantity from '../Layout/components/InputQuantity';
 
 const cx = classNames.bind(styles);
-function CartItem({ img, name, price, oldQuantity }) {
+function CartItem({ user, img, name, price, oldQuantity }) {
     const [quantity, setQuantity] = useState(oldQuantity);
     return (
         <div className={`row align-items-center ${cx('wrapper')}`}>

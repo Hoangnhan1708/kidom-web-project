@@ -14,8 +14,9 @@ import Banner from '~/components/Layout/components/Banner';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
-function ProductDetail() {
+function ProductDetail({ user }) {
     const { id } = useParams();
+    const [quantity, setQuantity] = useState(1);
     const [productData, setProductData] = useState({});
     const [otherProductData, setOtherProductData] = useState([{}]);
     useEffect(() => {
@@ -78,8 +79,8 @@ function ProductDetail() {
                     <img className={cx('panda', 'icon')} src={`${ENV.BASE_URL}/img/cute/panda.png`} alt="panda" />
                     <h1 className={cx('title')}>{productData.name}</h1>
                     <h2 className={cx('price')}>{productData.price} VNĐ</h2>
-                    <InputQuantity />
-                    <AddToCartButton />
+                    <InputQuantity quantity={quantity} setQuantity={setQuantity} />
+                    <AddToCartButton quantity={quantity} productId={productData.id} />
                 </div>
             </div>
             <div className={` ${cx('detail-info')}`}>
