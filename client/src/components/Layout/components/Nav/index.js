@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 function Nav() {
     return (
         <div className={cx('wrapper')}>
-            <Link to={config.routes.designByYou} className={cx('link-item')}>
+            <Link to={config.routes.home} className={cx('link-item')}>
                 <img className={cx('link-img')} src={images.DesignByYouLogo} alt="Design by you" />
             </Link>
             <Link to={config.routes.home} className={cx('link-item')}>
@@ -20,7 +20,7 @@ function Nav() {
             <Link to={config.routes.aboutus} className={cx('link-item')}>
                 <span>Về Kidom</span>
             </Link>
-            <Link to={config.routes.blog} className={cx('link-item')}>
+            <Link to={config.routes.home} className={cx('link-item')}>
                 <span>Blog</span>
             </Link>
         </div>

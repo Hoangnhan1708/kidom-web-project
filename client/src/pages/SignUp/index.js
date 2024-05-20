@@ -1,42 +1,121 @@
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 
+import { Link } from 'react-router-dom';
+import { FaFacebookSquare } from 'react-icons/fa';
 import styles from './SignUp.module.scss';
 import { ENV } from '~/env';
-import routes from '~/config/routes';
 import config from '~/config';
 const cx = classNames.bind(styles);
+
 function SignUp() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setErrorMessage('');
+        if (password === confirmPassword) {
+            try {
+                fetch(`${ENV.SERVER_URL}/signup`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+
+                    body: JSON.stringify({ username, password }),
+                })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((message) => {
+                        alert(message.message);
+                        window.location.replace(`${ENV.BASE_URL}login`);
+                    })
+                    .catch((error) => {
+                        if (error.status === 400) {
+                            return setErrorMessage('Tài khoản đã tồn tài!');
+                        } else {
+                            return setErrorMessage('Lỗi không xác định!');
+                        }
+                    });
+            } catch (error) {
+                setErrorMessage('Có lỗi xảy ra, vui lòng thử lại sau.');
+                console.error('Error:', error);
+            }
+        } else {
+            setErrorMessage('Vui lòng xác nhập mật khẩu chính xác!');
+        }
+    };
+
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('login-form')}>
-                <h1 className={cx('heading')}>Đăng nhập với</h1>
+            <div className={cx('signup-form-container')}>
+                <h1 className={cx('heading')}>Đăng ký với</h1>
                 <div className={cx('social-media-box')}>
-                    <button className={cx('social-media-btn')}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path
-                                className={cx('social-media-img')}
-                                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
-                            />
-                        </svg>
+                    <button className={cx('social-media-btn', 'facebook-btn')}>
+                        <FaFacebookSquare className={cx('facebook-img', 'social-media-img')} />
                         Facebook
                     </button>
-                    <button className={cx('social-media-btn')}>
-                        <img src={`${ENV.BASE_URL}/img/logo/icon-google.png`} alt="goggle" />
-                        Facebook
+                    <button className={cx('social-media-btn', 'google-btn')}>
+                        <img
+                            className={cx('google-img', 'social-media-img')}
+                            src={`${ENV.BASE_URL}/img/logo/icon-google.png`}
+                            alt="google"
+                        />
+                        Google
                     </button>
                 </div>
-                <form className={cx('login-form')}>
+                <form className={cx('signup-form')} onSubmit={handleSubmit}>
                     <label className={cx('label')} htmlFor="username">
                         Tài khoản
                     </label>
-                    <input className={cx('input')} id="username" type="text" />
+                    <input
+                        name="username"
+                        className={cx('input')}
+                        id="username"
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
                     <label className={cx('label')} htmlFor="password">
                         Mật khẩu
                     </label>
-                    <input className={cx('input')} id="password" type="password" />
-                    <button type="submit">Đăng nhập</button>
+                    <input
+                        name="password"
+                        className={cx('input')}
+                        id="password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <label className={cx('label')} htmlFor="password">
+                        Xác nhận mật khẩu
+                    </label>
+                    <input
+                        name="confirm-password"
+                        className={cx('input')}
+                        id="confirm-password"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
+                    />
+                    <button className={cx('submit-btn')} type="submit">
+                        Đăng ký
+                    </button>
                 </form>
-                <span>Bạn chưa là thành viên? </span>
+                {errorMessage && <div className={cx('error-message')}>{errorMessage}</div>}
+                <span className={cx('signup-span')}>
+                    Bạn đã có tài khoản?{' '}
+                    <Link className={cx('signup-link')} to={config.routes.SignUp}>
+                        Đăng nhập ngay
+                    </Link>
+                </span>
             </div>
         </div>
     );

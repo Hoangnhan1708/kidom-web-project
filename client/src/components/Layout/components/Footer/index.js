@@ -26,19 +26,19 @@ function Footer() {
                 </div>
                 <div className={`col-3 ${cx('footer-col')} `}>
                     <h3 className={cx('heading')}>Hỗ trợ & chính sách</h3>
-                    <Link to={config.routes.faq} className={cx('link-item')}>
+                    <Link to={config.routes.home} className={cx('link-item')}>
                         <span>Các câu hỏi thường gặp</span>
                     </Link>
-                    <Link to={config.routes.policy} className={cx('link-item')}>
+                    <Link to={config.routes.home} className={cx('link-item')}>
                         <span>Chính sách bảo mật</span>
                     </Link>
-                    <Link to={config.routes.policy} className={cx('link-item')}>
+                    <Link to={config.routes.home} className={cx('link-item')}>
                         <span>Chính sách thanh toán</span>
                     </Link>
-                    <Link to={config.routes.policy} className={cx('link-item')}>
+                    <Link to={config.routes.home} className={cx('link-item')}>
                         <span>Chính sách khuyến mãi</span>
                     </Link>
-                    <Link to={config.routes.policy} className={cx('link-item')}>
+                    <Link to={config.routes.home} className={cx('link-item')}>
                         <span>Chính sách bảo hành và đổi trả</span>
                     </Link>
                 </div>

@@ -96,7 +96,7 @@ function Login() {
                 {errorMessage && <div className={cx('error-message')}>{errorMessage}</div>}
                 <span className={cx('signup-span')}>
                     Bạn chưa là thành viên?{' '}
-                    <Link className={cx('signup-link')} to={config.routes.SignUp}>
+                    <Link className={cx('signup-link')} to={config.routes.signup}>
                         Đăng ký ngay
                     </Link>
                 </span>

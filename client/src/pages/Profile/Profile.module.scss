@@ -40,4 +40,27 @@
 
 .img {
     border-radius: 16px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    width: 200px;
+    height: 200px;
+}
+
+.info-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-change-name,
+.input-change-img {
+    margin-left: 10px;
+    border: 1px solid rgba(117, 113, 113);
+}
+
+.submit-change-btn {
+    padding: 20px;
+    background-color: #407ec9;
+    color: #fff;
+    border-radius: 10px;
+    transform: translateY(-75px);
 }
