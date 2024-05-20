@@ -34,3 +34,42 @@
     object-fit: contain;
     border-radius: 16px;
 }
+
+.payment-container {
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+}
+.payment-voucher {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.voucher-icon {
+    margin-right: 20px;
+}
+
+.payment-total {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+.payment-label {
+    margin-left: 30px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.payment-btn {
+    padding: 20px 40px;
+    color: #fff;
+    background-color: #407ec9;
+}
